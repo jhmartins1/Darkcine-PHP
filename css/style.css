@@ -1,0 +1,25 @@
+body{
+  background-color: #e5e5e5;
+}
+
+.nav-extended{
+  background-image: url("../img/cape.jpg");
+  background-size:cover;
+  background-blend-mode: soft-light;
+}
+
+nav ul li.active{
+  border-bottom: solid 2px #FFF;
+  background-color: transparent;
+}
+
+.tab a.active{
+  border-bottom: solid 2px #FFF;
+  background-color: transparent;
+}
+
+.nav-header h1{
+  text-shadow: 1px 1px 4px #680000;
+  font-family: 'Nunito', sans-serif;
+  font-size: 90px;
+}
