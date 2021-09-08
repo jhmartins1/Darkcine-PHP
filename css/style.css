@@ -23,3 +23,8 @@ nav ul li.active{
   font-family: 'Nunito', sans-serif;
   font-size: 90px;
 }
+
+.fadeOut{
+  opacity: 0;
+  transition: 1s;
+}

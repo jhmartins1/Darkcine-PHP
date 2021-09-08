@@ -14,6 +14,7 @@ class FilmesRepositoryPDO{
     $filmesLista = array();
     $sql = "SELECT * FROM filmes";
     $filmes = $this->conexao->query($sql);
+    if(!$filmes) return false;
     while($filme = $filmes->fetchObject()){
       array_push($filmesLista, $filme);
     }
@@ -34,6 +35,17 @@ class FilmesRepositoryPDO{
 
   public function favoritar(int $id){
     $sql = "UPDATE filmes SET favorito = NOT favorito WHERE id=:id";
+    $stmt = $this->conexao->prepare($sql);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    if($stmt->execute()){
+      return 'ok';
+    }else{
+      return 'erro';
+    }
+  }
+
+  public function delete(int $id){
+    $sql = "DELETE from filmes WHERE id=:id";
     $stmt = $this->conexao->prepare($sql);
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     if($stmt->execute()){

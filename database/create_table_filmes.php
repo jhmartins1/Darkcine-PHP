@@ -7,7 +7,7 @@ $sql = "DROP TABLE IF EXISTS filmes";
 if($db->exec($sql)) echo "tabela filmes apagada";
 
 $sql = "CREATE TABLE filmes (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          id INTEGER PRIMARY KEY AUTO_INCREMENT,
           titulo VARCHAR(200) NOT NULL,
           poster VARCHAR(200),
           sinopse TEXT,
